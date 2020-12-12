@@ -3,7 +3,7 @@ body {
     font-size: 12px;
     font-weight: 400;
     padding-bottom: 100px;
-    background-color: #ecebe8;
+    background-color: black;
 }
 
 html {
@@ -31,43 +31,50 @@ h3 {
 .jumbotron {
     height: 40px;
     border-bottom: #37474F solid 4px;
-    background-color: black;
+    background-color: #FFCCBC;
 }
 
 .container {
     height: 100%;
-    /* border: 2px red solid; */
 }
 
 #header {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:#1db954;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:black;
     font-weight: 400;
     font-size: 3.2rem;
-    margin-left: 100px;
+    text-align: center;
+}
+
+.odd {
+    background-color: #B2DFDB;
+}
+
+.even {
+    background-color: #A5D6A7;
 }
 
 #title {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:sans-serif;
     color: black;
-    font-weight: 900;
+    font-weight: 400;
     font-size: 1.9rem;
+    text-align: center;
+    /* text-decoration: underline black; */
 }
 
 .card {
-    /* border: 2px blueviolet solid; */
     margin: auto;
     margin-top: 20px;
 }
 
 .col {
-    /* border: 2px rosybrown solid; */
     justify-items: center;
 }
 
 .row {
     margin-top: 10px;
-    border: 2px #B0BEC5 solid;
+    border-radius: 0.6rem;
 }
 
 pre {

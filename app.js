@@ -1,8 +1,7 @@
 // save current state: selected visualization variable
 var year = "2010";
 var year_data = []
-loadData();
-
+init();
 
 var context = document.getElementById("radarChart").getContext("2d");
 var radarChart = new Chart(context, {
@@ -53,7 +52,10 @@ function updateSlider(val){
   document.getElementById("yearVal").innerHTML = val;
   loadData();
   redraw();
-  
+}
+
+function init() {
+  loadData();
 }
 
 function redraw() {
