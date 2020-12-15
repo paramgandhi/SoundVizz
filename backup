@@ -1,0 +1,81 @@
+ARTIST SECTION
+    <div class="row" id="artist-section" style="align-items: flex-end;">
+      <h1 id="title">Artist</h1>
+    </div>
+    <div class="row even" id="artist-row">
+      <!-- Visualization Chart Column -->
+      <div class="col-8" id="vis-container">
+        <canvas id="radarChart" style="padding: 0;" height="200"></canvas>
+      </div>
+
+      <!-- Control Panel Column to select vis variable -->
+      <div class="col" style="flex-direction: column;">
+        <!-- Year Filter Panel Card-->
+        <div class="card" style="width: 18rem;" id="year">
+          <div class="card-body">
+            <div class="card-title">
+              <h1>Instructions: </h1>
+            </div>
+            <form id="slideartist">
+              <input type="range" min="0.0" max="1.0" value="0.70" class="slider" id="myRange"
+                onchange="handlePopSlider(this.value)" name="rangeSlider" step="0.1">
+              <p>Popularity: <span id="popVal">0.70</script></span></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    ARTIST JS
+    var selected = [];
+var all = [];
+var artist = ""
+var artist_data = []
+// have a add button that stores and displays the artist
+
+init_artist();
+
+d3.csv("data/data_by_artist.csv", (data) => {
+    for (var i = 0; i < data.length; i++) {
+        all.push(data[i].artist);
+    };
+
+    $("#artist-input").autocomplete({
+        source: all
+    });
+
+    $("#artist-input").keyup((e) => {
+        if (e.keyCode == 13) {
+            handleInputs();
+        }
+    });
+});
+
+function handleInputs() {
+    var search = $('#artist-input').val();
+    if (all.indexOf(search) != -1) {
+        handleSearch(search);
+    }
+}
+
+function handleSearch(value) {
+    selected.push(value);
+    console.log(selected);
+}
+
+function init_artist() {
+    loadArtistData();
+}
+
+// Re Draw Artist
+
+function loadArtistData() {
+    d3.csv("data/data_by_artist.csv", (data) => {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].artist == artist) {
+                artist_data = data[i];
+            }
+        }
+    })
+    .then(console.log(artists))
+}
