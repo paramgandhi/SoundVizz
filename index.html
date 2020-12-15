@@ -51,6 +51,9 @@
     <div class="row" id="year-section">
       <h1 id="title">Year</h1>
     </div>
+    <div class="row">
+      <h2>This interactive allows you to explore the history of music. Follow the instructions to navigate this interactive.</h2>
+    </div>
     <div class="row even" id="year-row">
       <!-- Visualization Chart Column -->
       <div class="col-8" id="vis-container">
@@ -60,16 +63,25 @@
       <!-- Control Panel Column to select vis variable -->
       <div class="col" style="flex-direction: column;">
         <!-- Year Filter Panel Card-->
-        <div class="card" style="width: 18rem;" id="year">
+        <div class="card" style="width: 32rem;" id="year">
           <div class="card-body">
             <div class="card-title">
               <h1>Instructions: </h1>
             </div>
+            <p> Please use the slider below to choose a year and view the characteristics of music released through that year on the radar plot on the left.</p>
             <form id="slideyear">
               <input type="range" min="1930" max="2020" value="2010" class="slider" id="myRange"
                 onchange="handleSlider(this.value)" name="rangeSlider" step="1">
               <p>Year: <span id="yearVal">2010</script></span></p>
             </form>
+            <p>
+              Key insights:
+              <ul>
+                <li>Music before the 1950's contained a lot of acoustic elements.</li>
+                <li>Post 1950, the music started to include more danceability and tempo. </li>
+                <li>After 1970, the music included higher values of loudness, energy and tempo. </li>
+              </ul>
+            </p>
           </div>
         </div>
       </div>
@@ -79,6 +91,9 @@
     <!-- GENRE SECTION-->
     <div class="row" id="genre-section" style="justify-content: flex-end;">
       <h1 id="title">Genre</h1>
+    </div>
+    <div class="row">
+      <h2>Following are the Top 20 music genres from 1930 to 2020 sorted by popularity. By hovering over each bar plot you will be able to view the characteristics of the genre.</h2>
     </div>
     <div class="row odd" id="genre-row">
       <!-- BarChart Column -->
